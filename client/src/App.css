@@ -42,10 +42,47 @@ body {
 }
 
 .PlayerCards:hover {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(216, 44, 44);
   color: white;
   transform: scale(1.02);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar {
+  align-items: center;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  padding: 0 3%;
+  width: 100%;
+  -webkit-box-shadow: 0px 2px 15px -8px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 0px 2px 15px -8px rgba(0, 0, 0, 0.42);
+  box-shadow: 0px 2px 15px -8px rgba(0, 0, 0, 0.42);
+}
+
+.dark-mode__toggle {
+  background: rgb(255, 255, 255);
+  border-radius: 50px;
+  border: 1px solid rgb(0, 0, 0);
+  height: 20px;
+  position: relative;
+  width: 40px;
+}
+
+.toggle {
+  background: #ffd689;
+  border-radius: 50px;
+  height: 18px;
+  left: 0;
+  position: absolute;
+  transition: 0.2s;
+  width: 20px;
+}
+
+.toggled {
+  left: 18px;
+  background: rgb(21, 18, 31);
 }
 
 .App-link {
@@ -59,4 +96,19 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.dark-mode {
+  color: rgb(0, 0, 0);
+  background-color: #ffc039;
+}
+
+.dark-mode .PlayerCards {
+  background-color: black;
+  color: white;
+}
+
+.dark-mode .PlayerCards:hover {
+  background-color: rgb(34, 34, 34);
+  color: white;
 }
