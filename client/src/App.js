@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import PlayerData from './PlayerData';
-import NavBar from './NavBar';
+import PlayerData from './components/PlayerData';
+import NavBar from './components/NavBar';
 
 const serverData = "http://localhost:5000/api/players";
 
