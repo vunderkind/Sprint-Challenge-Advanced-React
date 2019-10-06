@@ -1,26 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
+import axios from 'axios';
 import './App.css';
+import PlayerData from './components/PlayerData';
+import NavBar from './components/NavBar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const serverData = "http://localhost:5000/api/players";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      players: [],
+    };
+  };
+
+  componentDidMount() {
+    //mounting the API output here
+    axios.get(serverData)
+    .then(res => {
+      this.setState(
+        {
+          players: res.data,
+        }
+        )
+    })
+  }
+
+  render() {
+    const {players} = this.state;
+    return (
+      <div class="Wrapper">
+        <NavBar />
+      {players.map(player=>(
+        <div className="PlayerCards">
+        <PlayerData
+        name={player.name}
+        country={player.country}
+        searches={player.searches}
+        />
+        </div>
+      )
+      )
+      }
+      </div>
+      
+    )
+  }
 }
-
 export default App;
